@@ -18,7 +18,9 @@ const session = require('express-session')
 const UserSchema = require('./models/UserModel')
 const origin = [
   'http://localhost:3111',
-  'http://localhost:5173'
+  'http://localhost:5173',
+  'https://expert-coin-admin.vercel.app',
+  'https://expertcointech.com'
 ]
 app.use(cors({
   origin
