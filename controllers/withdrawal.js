@@ -175,8 +175,8 @@ const adminEditSingleWithdrawal = async (req, res) => {
         if (req.body.status == 'approved') {
             console.log(req.body.amount)
             const owner = await User.findOne({ _id: singleWithdrawal.owner })
-            await User.findOneAndUpdate({ _id: singleWithdrawal.owner }, { tradeProfit: owner.tradeProfit - req.body.amount, totalEquity: owner.totalEquity - req.body.amount })
-            console.log(req.body.amount, owner.tradeProfit)
+            // await User.findOneAndUpdate({ _id: singleWithdrawal.owner }, { tradeProfit: owner.tradeProfit - req.body.amount, totalEquity: owner.totalEquity - req.body.amount })
+            // console.log(req.body.amount, owner.tradeProfit)
             const finalTransactionEdit = await Withdrawal.findOneAndUpdate({ id: withdrawalId }, { status: "approved", edited: true, })
             res.status(StatusCodes.OK).json(finalTransactionEdit);
         }
